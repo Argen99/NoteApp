@@ -6,35 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.MainActivity">
 
-    <ListView
-        tools:listitem="@layout/support_simple_spinner_dropdown_item"
-        android:id="@+id/lv_notes"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_notes"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <LinearLayout
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fub_add"
+        android:src="@drawable/ic_add"
+        android:layout_margin="22dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
 
-        <Button
-            android:id="@+id/btn_add_note"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
-            android:text="@string/add"/>
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/delete"/>
-
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fub_delete"
+        android:src="@drawable/ic_delete"
+        android:layout_margin="22dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

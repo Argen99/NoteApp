@@ -1,13 +1,16 @@
 package com.geektech.homework71.data.repository
 
+import android.util.Log
+import android.widget.Toast
 import com.geektech.homework71.data.mapper.NoteMapper
 import com.geektech.homework71.data.model.NoteDto
 import com.geektech.homework71.domain.model.Note
 import com.geektech.homework71.domain.repository.NoteRepository
+import javax.inject.Inject
 
-class NoteRepositoryImpl: NoteRepository {
+class NoteRepositoryImpl @Inject constructor (
+    private val noteMapper: NoteMapper): NoteRepository {
 
-    private val noteMapper = NoteMapper()
     private val notes = arrayListOf<NoteDto>()
 
     override fun addNote(note: Note) {
@@ -20,7 +23,7 @@ class NoteRepositoryImpl: NoteRepository {
         }
     }
 
-    override fun deleteNote(index: Int) {
-        notes.removeAt(index)
+    override fun deleteNote() {
+        notes.removeLast()
     }
 }

@@ -3,12 +3,16 @@
     package="com.geektech.homework71">
 
     <application
+        android:name=".NoteApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork71">
+        <activity
+            android:name=".presentation.ui.AddNoteActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.ui.MainActivity"
             android:exported="true">
