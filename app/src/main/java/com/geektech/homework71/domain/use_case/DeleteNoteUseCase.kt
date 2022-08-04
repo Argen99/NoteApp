@@ -7,5 +7,5 @@ class DeleteNoteUseCase
     @Inject constructor(
     val noteRepository: NoteRepository) {
 
-    fun deleteNote() = noteRepository.deleteNote()
+    suspend fun deleteNote() = noteRepository.deleteNote()
 }

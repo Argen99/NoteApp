@@ -1,9 +1,8 @@
-package com.geektech.homework71.presentation.ui
+package com.geektech.homework71.presentation.ui.add_note
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.geektech.homework71.databinding.ActivityAddNoteBinding
 import com.geektech.homework71.domain.model.Note
 import com.geektech.homework71.extensions.showToast
