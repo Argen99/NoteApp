@@ -4,9 +4,9 @@ import com.geektech.homework71.domain.model.Note
 import com.geektech.homework71.domain.repository.NoteRepository
 import javax.inject.Inject
 
-class AddNoteUseCase @Inject constructor(
+class UpdateNoteUseCase@Inject constructor(
     val noteRepository: NoteRepository
 ) {
 
-    fun addNote(note: Note) = noteRepository.addNote(note)
+    fun updateNote(note: Note) = noteRepository.updateNote(note)
 }

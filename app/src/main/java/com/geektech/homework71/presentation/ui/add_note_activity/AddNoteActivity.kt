@@ -1,4 +1,4 @@
-package com.geektech.homework71.presentation.ui.add_note
+package com.geektech.homework71.presentation.ui.add_note_activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +20,10 @@ class AddNoteActivity : AppCompatActivity() {
     }
     private fun initClickers() {
         binding.btnEnter.setOnClickListener {
-            val text = binding.etTitle.text.toString()
+            val title = binding.etTitle.text.toString()
             val description = binding.etDescription.text.toString()
             when {
-                text.isEmpty() -> {
+                title.isEmpty() -> {
                     showToast("Enter title")
                 }
                 description.isEmpty() -> {
@@ -31,7 +31,7 @@ class AddNoteActivity : AppCompatActivity() {
                 }
                 else -> {
                     Intent().apply {
-                        putExtra(noteKey, Note(text,description))
+                        putExtra(noteKey, Note(title = title, description =  description))
                         setResult(RESULT_OK, this)
                         finish()
                     }

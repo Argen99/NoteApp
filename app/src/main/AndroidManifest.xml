@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeWork71">
         <activity
-            android:name=".presentation.ui.add_note.AddNoteActivity"
+            android:name=".presentation.ui.update_activity.UpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.ui.main.MainActivity"
+            android:name=".presentation.ui.add_note_activity.AddNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.main_activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

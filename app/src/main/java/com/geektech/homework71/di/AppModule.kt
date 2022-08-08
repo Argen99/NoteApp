@@ -1,14 +1,16 @@
 package com.geektech.homework71.di
 
+import android.content.Context
+import androidx.room.Room
 import com.geektech.homework71.data.mapper.NoteMapper
 import com.geektech.homework71.data.repository.NoteRepositoryImpl
+import com.geektech.homework71.data.room.NoteDao
+import com.geektech.homework71.data.room.NoteDataBase
 import com.geektech.homework71.domain.repository.NoteRepository
-import com.geektech.homework71.domain.use_case.AddNoteUseCase
-import com.geektech.homework71.domain.use_case.DeleteNoteUseCase
-import com.geektech.homework71.domain.use_case.GetAllNotesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -17,11 +19,21 @@ import javax.inject.Singleton
 object AppModule {
 
     @Singleton
-    val noteMapper = NoteMapper()
+    @Provides
+    fun provideNoteDataBase(@ApplicationContext context: Context) =
+        Room.databaseBuilder(
+            context,
+            NoteDataBase::class.java,
+            "note_database"
+        ).allowMainThreadQueries().build()
 
     @Singleton
     @Provides
-    fun provideNoteRepository(): NoteRepository {
-        return NoteRepositoryImpl(noteMapper)
+    fun provideNoteDao(noteDataBase: NoteDataBase) = noteDataBase.noteDao()
+
+    @Singleton
+    @Provides
+    fun provideNoteRepository(noteDao: NoteDao): NoteRepository {
+        return NoteRepositoryImpl(noteDao)
     }
 }
