@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.homework71.databinding.ItemNotesBinding
-import com.geektech.homework71.domain.model.Note
+import com.geektech.homework71.domain.model.room.Note
 
 class NoteAdapter(private val list: List<Note>): RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
@@ -32,19 +32,17 @@ class NoteAdapter(private val list: List<Note>): RecyclerView.Adapter<NoteAdapte
 
             itemView.setOnClickListener {
                 clickListener.onItemClick(list[adapterPosition])
-                notifyItemRemoved(adapterPosition)
             }
             itemView.setOnLongClickListener {
-                clickListener.onLingClickListener(list[adapterPosition])
+                clickListener.onLongClickListener(list[adapterPosition])
+                notifyItemRemoved(adapterPosition)
                 return@setOnLongClickListener true
             }
         }
-
-
     }
 
     interface ItemClickListener {
         fun onItemClick(note: Note)
-        fun onLingClickListener(note: Note)
+        fun onLongClickListener(note: Note)
     }
 }

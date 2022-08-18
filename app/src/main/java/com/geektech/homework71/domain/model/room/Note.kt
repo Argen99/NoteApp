@@ -1,4 +1,4 @@
-package com.geektech.homework71.domain.model
+package com.geektech.homework71.domain.model.room
 
 import java.io.Serializable
 

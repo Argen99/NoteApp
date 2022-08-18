@@ -1,4 +1,4 @@
-package com.geektech.homework71.data.model
+package com.geektech.homework71.data.room
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

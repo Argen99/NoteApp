@@ -1,7 +1,6 @@
 package com.geektech.homework71.data.room
 
 import androidx.room.*
-import com.geektech.homework71.data.model.NoteEntity
 
 @Dao
 interface NoteDao {

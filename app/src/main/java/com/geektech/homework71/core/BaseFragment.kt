@@ -1,16 +1,13 @@
 package com.geektech.homework71.core
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseFragment: Fragment() {
 
     protected fun <T> StateFlow<UIState<T>>.subscribe(
         state: Lifecycle.State = Lifecycle.State.STARTED,

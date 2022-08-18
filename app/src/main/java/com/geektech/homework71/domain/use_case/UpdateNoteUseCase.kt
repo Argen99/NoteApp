@@ -1,6 +1,6 @@
 package com.geektech.homework71.domain.use_case
 
-import com.geektech.homework71.domain.model.Note
+import com.geektech.homework71.domain.model.room.Note
 import com.geektech.homework71.domain.repository.NoteRepository
 import javax.inject.Inject
 
